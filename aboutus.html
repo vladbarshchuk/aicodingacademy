@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AI Coding Academy</title>
+    <style>
+        :root {
+            --primary-color: #53ADAD;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(83, 173, 173, 0.1) 0%, rgba(255, 255, 255, 1) 100%);
+            margin-top: 70px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #4599a0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-content {
+            margin-bottom: 60px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+        }
+        
+        .team-section {
+            padding: 40px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            justify-items: center;
+            justify-content: center;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .team-member {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-image {
+            height: 250px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 20px;
+        }
+        
+        .member-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .member-info h4 {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .member-info p {
+            font-size: 14px;
+        }
+        
+        .values-section {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .value-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+            padding-right: 20px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #999;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-column {
+                width: 100%;
+                padding-right: 0;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="index.html" style="text-decoration: none; color: var(--primary-color);">AI Coding Academy</a></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="https://ai-coding-academy-usa.com/">Programs</a></li>
+                    <li><a href="bootcamp.html">Summer Bootcamp</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>About AI Coding Academy</h1>
+                <p>Meet our team of dedicated educators shaping the future of AI education for young minds.</p>
+                <a href="#team" class="btn">Meet Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission</h2>
+                <p>Empowering the next generation of AI innovators</p>
+            </div>
+            
+            <div class="about-content">
+                <p>At AI Coding Academy, we believe that early exposure to artificial intelligence and coding creates pathways to future innovation. Our mission is to make advanced technology education accessible, engaging, and inspiring for middle school students.</p>
+                <p>Founded by a team of educators and industry professionals, our academy bridges the gap between traditional education and cutting-edge technology. We focus on hands-on learning, creative problem-solving, and ethical considerations in AI development.</p>
+                <p>Through our specialized curriculum, students not only learn to code but also develop critical thinking skills, collaborate effectively, and build confidence in their ability to shape the technological future.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Expert Team</h2>
+                <p>Meet the educators behind AI Coding Academy</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Vlad.png" alt="Vlad - AI Research Lead">
+                    </div>
+                    <div class="member-info">
+                        <h3>Vlad</h3>
+                        <h4>AI Research Lead & Senior Instructor</h4>
+                        <p>With a background in machine learning and computer vision, Vlad brings cutting-edge AI concepts to life for students. His innovative teaching methods make complex algorithms accessible to young learners.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Danil.png" alt="Danil - Technical Director">
+                    </div>
+                    <div class="member-info">
+                        <h3>Danil</h3>
+                        <h4>Technical Director & Robotics Instructor</h4>
+                        <p>Danil bridges the gap between software and hardware, teaching students how AI can interact with the physical world. His robotics workshops are among our most popular and engaging offerings.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Yan.png" alt="Yan - Project-Based Learning Expert">
+                    </div>
+                    <div class="member-info">
+                        <h3>Yan</h3>
+                        <h4>Project-Based Learning Expert</h4>
+                        <p>Yan specializes in designing real-world AI projects that inspire creativity and problem-solving. His mentorship has helped countless students develop award-winning projects and gain admission to prestigious programs.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Verena.png" alt="Verena - Curriculum Director">
+                    </div>
+                    <div class="member-info">
+                        <h3>Verena</h3>
+                        <h4>Curriculum Director & Python Specialist</h4>
+                        <p>Verena has developed our comprehensive learning pathway that guides students from basic coding concepts to advanced AI applications. Her student-centered approach ensures learning is both challenging and enjoyable.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Tom.png" alt="Tom - Mathematics & Computer Science Specialist">
+                    </div>
+                    <div class="member-info">
+                        <h3>Tom</h3>
+                        <h4>Mathematics & Computer Science Specialist</h4>
+                        <p>With over 10 years of experience in education, Tom specializes in Mathematics and Computer Science. His expertise helps students build strong foundations in the core principles that underlie AI and computational thinking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide our educational approach</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Hands-On Learning</h3>
+                    <p>We believe in learning by doing. Our curriculum emphasizes practical projects and real-world applications over theoretical concepts alone.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>Ethical Innovation</h3>
+                    <p>We teach students to consider the ethical implications of AI development, fostering responsible innovation from the beginning.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>Inclusive Excellence</h3>
+                    <p>We're committed to making AI education accessible to students from all backgrounds, creating pathways for diverse voices in technology.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>Growth Mindset</h3>
+                    <p>We encourage students to embrace challenges, persist through obstacles, and understand that abilities can be developed through dedication and hard work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AI Coding Academy</h3>
+                    <p>Empowering the next generation of coders with AI-enhanced education.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="https://ai-coding-academy-usa.com/">Programs</a></li>
+                        <li><a href="bootcamp.html">Summer Bootcamp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Featured Programs</h3>
+                    <ul>
+                        <li><a href="https://ai-coding-academy-usa.com/">GPT101</a></li>
+                        <li><a href="https://ai-coding-academy-usa.com/">Computer Vision</a></li>
+                        
+                        <li><a href="https://ai-coding-academy-usa.com/">Game Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@aicodingacademy.com</li>
+                        <li>Phone: (914) 979-2175 </li>
+                        <li>Address: 9 Homestead PL, Jersey City, NJ, 07306</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 AI Coding Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
